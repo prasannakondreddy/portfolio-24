@@ -1,0 +1,170 @@
+{% load static %}
+
+
+
+{% block body %}
+<div class="project-container">
+    <h1 class="section-header">
+        <span class="title-word title-word-1">My</span>
+        <span class="title-word title-word-3">Work!</span>
+    </h1>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <!-- First Project: Smart Irrigation -->
+                <div class="carousel-item active card-parent">
+                    <div class="card bg-primary mb-3 project-card">
+                        <div class="row no-gutters">
+                            <div class="col-md-6">
+                                <div class="image-carousel">
+                                    <img src="{% static "our0.jpg" %}" class="d-block w-100 img-fluid" alt="">
+                                    <!-- Add more images here if needed -->
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="color:white">Smart Irrigation</h5>
+                                    <p class="card-text" style="color:#f4c2c2;">
+                                        It is an IOT based smart irrigation system. It is a Django application (deployed on digital 
+                                        ocean droplet) which assists the farmer with mindful usage of water for irrigation by analyzing 
+                                        the data through sensors placed in the field through the app and sms features. Aim to add prediction 
+                                        of soil moisture powered by machine learning for effective irrigation management system.
+                                    </p>
+                                    <ul class="social-media-list">
+                                        <li>
+                                            <a href="https://github.com/prasannakondreddy" target="_blank" class="contact-icon">
+                                                <i class="fa fa-github" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Project: Tin-Dog -->
+                <div class="carousel-item card-parent" >
+                    <div class="card bg-primary mb-3 project-card">
+                        <div class="row no-gutters">
+                            <div class="col-md-6">
+                                <video id="tinDogVideo" class="d-block w-100" style="max-height: 400px;" autoplay muted>
+                                    <source src="{% static "TinDog.mp4" %}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="color:white">Tin-Dog</h5>
+                                    <p class="card-text" style="color:#f4c2c2;">
+                                        A basic UI based application which is a page for dogs to connect. This is one of the initial projects 
+                                        whose main learning outcome understanding the basic file structure, HTML, CSS and integrating bootstrap.
+                                    </p>
+                                    <ul class="social-media-list">
+                                        <li>
+                                            <a href="https://github.com/prasannakondreddy" target="_blank" class="contact-icon">
+                                                <i class="fa fa-github" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://bootstraplearn-tindog.netlify.app/" target="_blank" class="contact-icon">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Third Project: Meteo with Integrated Images -->
+                <div class="carousel-item card-parent">
+                    <div class="card bg-primary mb-3 project-card">
+                        <div class="row no-gutters">
+                            <div class="col-md-6">
+                                <video id="weatherVideo" class="d-block w-100" style="max-height: 400px;" autoplay muted>
+                                    <source src="{% static "weather.mp4" %}" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body">
+                                    <h5 class="card-title" style="color:white">Meteo</h5>
+                                    <p class="card-text" style="color:#f4c2c2;">
+                                        An application which tells you about the weather conditions based on your location. There is also a 
+                                        search bar using which we can find out the weather of any desired city. The main learning outcome 
+                                        of this project was learning about APIs and integrating them.
+                                    </p>
+                                    <ul class="social-media-list">
+                                        <li>
+                                            <a href="https://github.com/prasannakondreddy" target="_blank" class="contact-icon">
+                                                <i class="fa fa-github" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="https://weathersearchnow.netlify.app/" target="_blank" class="contact-icon">
+                                                <i class="fa-solid fa-link"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navigation controls for main carousel -->
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock body %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Initialize carousel
+        $('#carouselExampleControls').carousel({ interval: false });
+
+        // Disable video controls
+        $('video').removeAttr('controls');
+
+        // Pause all videos on slide change
+        $('#carouselExampleControls').on('slide.bs.carousel', function() {
+            $('video').each(function() {
+                $(this)[0].pause();
+            });
+        });
+
+        // Play video when slide becomes active
+        $('#carouselExampleControls').on('slid.bs.carousel', function(e) {
+            var $e = $(e.relatedTarget);
+            var video = $e.find('video');
+            if (video.length > 0) {
+                video.get(0).play();
+            }
+        });
+
+        // Ensure videos start playing on first load
+        var firstVideo = $('.carousel-item.active').find('video');
+        if (firstVideo.length > 0) {
+            firstVideo.get(0).play();
+        }
+    });
+</script>
+{% endblock scripts %}

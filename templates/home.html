@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<div id="about-section" class="about-container">    
+    <div class="about-container">
+        <div class="main">
+            <div class="left">
+                <p>Hey, I'm Sai Prasanna</p>
+                <p class="small-text">I'm a software engineer specializing in building cross-platform applications 
+                with experience in Full Stack development </p>
+                
+                <p class="typewriter">I love 
+                    <span id="type-span" class="title-word title-word-1"></span>
+                    <br>
+                </p>
+                
+                <a href="{% static 'SaiPrasannaKondreddy_fullStack_resume.pdf' %}" class="btn btn-outline-light btn-sm" download>Download Resume</a>
+            </div>
+
+            <div class="right rounded-image-container d-none d-md-block">
+                <img src="{% static 'img_fin_1.png' %}" class="rounded-image" alt="">
+            </div>
+        </div>
+    </div>  
+</div>
+<div >
+<div class="section">
+    <div id="project-section">
+        {% include 'project.html' %}
+    </div>
+</div>
+
+<div class="section">
+  <div id="skills-section">
+      {% include 'skills.html' %}
+  </div>
+</div>
+
+<div class="section">
+    <div id="experience-section">
+        {% include 'experience.html' %}
+    </div>
+</div>
+
+
+
+<div class="section">
+    <div id="contact-section">
+        {% include 'contact.html' %}
+    </div>
+</div>
+</div>
+<br>
+<br>
+{% endblock body %}

@@ -1,0 +1,22 @@
+
+{% load static %}
+{% block body %}
+<div class="about-container">
+    <div class="main" >
+        <div class="left">
+            <p>Hey, I'm Sai Prasanna</p>
+            <p class="small-text">I'm a software engineer specializing in building cross-platform applications 
+              with experience in Full Stack development </p>
+            <p class="typewriter">I love
+                <span id="type-span" class="title-word-small title-word-1"></span>
+            </p>
+            
+                <a href="{% static 'SaiPrasannaKondreddy_fullStack_resume.pdf' %}" class="btn btn-outline-light btn-sm" download>Download Resume</a>
+            
+        </div>
+        <div class="right rounded-image-container d-none d-md-block">
+            <img src="{% static 'profileee.png' %}" class="rounded-image" alt="">
+        </div>
+    </div>
+</div>
+{% endblock body %}
